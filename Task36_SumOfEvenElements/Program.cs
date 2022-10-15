@@ -1,6 +1,8 @@
 ﻿/* Задача 36
 Задайте одномерный массив, заполненный случайными числами.
-Найдите сумму элементов, стоящих на нечётных позициях. */
+Найдите сумму элементов, стоящих на нечётных позициях. 
+[3, 7, 23, 12] -> 19
+[-4, -6, 89, 6] -> 0 */
 
 // Метод считывания
 int GetNumFromUser(string message)
@@ -41,13 +43,13 @@ bool isValid = IsNumValid(arraySize, arrayMinValue, arrayMaxValue);
 if (isValid)
 {
     int[] randomArray = CreateRandomArray(arraySize, arrayMinValue, arrayMaxValue);
-    int sumEvenElements = 0;
-    for (int i=1; i < arraySize; i+=2)
+    int sumOddElements = 0;
+    for (int i = 1; i < arraySize; i += 2)
     {
-        sumEvenElements += randomArray[i];
+        sumOddElements += randomArray[i];
     }
     string result = string.Join(", ", randomArray);
-    Console.WriteLine($"В массиве [{result}] сумма элементов, стоящих на нечётных позициях равна: {sumEvenElements}.");
+    Console.WriteLine($"В массиве [{result}] сумма элементов, стоящих на нечётных позициях равна: {sumOddElements}.");
 }
 else
 {
